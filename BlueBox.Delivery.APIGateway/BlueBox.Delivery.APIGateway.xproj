@@ -7,7 +7,7 @@
 
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>a3008e24-b1d4-4c30-b24c-b1985dc65fc9</ProjectGuid>
+    <ProjectGuid>4f8dacb5-094d-4ac7-8ef9-48e00b6841c6</ProjectGuid>
     <RootNamespace>BlueBox.Delivery.APIGateway</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>

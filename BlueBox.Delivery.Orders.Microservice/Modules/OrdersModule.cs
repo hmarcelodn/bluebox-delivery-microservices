@@ -4,7 +4,6 @@ using BlueBox.Delivery.Orders.Microservice.Model;
 using BlueBox.Delivery.Orders.Microservice.Storage;
 using Nancy;
 using Nancy.ModelBinding;
-using System;
 
 namespace BlueBox.Delivery.Orders.Microservice.Modules
 {
