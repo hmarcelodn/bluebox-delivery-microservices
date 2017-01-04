@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Nancy.Owin;
+using Nancy;
 
 namespace BlueBox.Delivery.Customers.Microservice
 {
@@ -23,6 +24,7 @@ namespace BlueBox.Delivery.Customers.Microservice
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.UseOwin().UseNancy();
+            loggerFactory.AddConsole().AddDebug();
         }
     }
 }

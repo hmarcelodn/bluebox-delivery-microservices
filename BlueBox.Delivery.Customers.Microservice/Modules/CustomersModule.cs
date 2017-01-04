@@ -12,7 +12,7 @@ namespace BlueBox.Delivery.Customers.Microservice.Modules
             {
                 var customerId = (int)parameters.customerid;
 
-                return customerStorage.GetCustomerById(customerId);
+                return this.Negotiate.WithModel(customerStorage.GetCustomerById(customerId));
             });
         }
     }

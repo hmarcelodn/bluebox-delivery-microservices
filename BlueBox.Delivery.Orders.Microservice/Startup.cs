@@ -23,6 +23,7 @@ namespace BlueBox.Delivery.Orders.Microservice
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.UseOwin().UseNancy();
+            loggerFactory.AddConsole().AddDebug();
         }
     }
 }

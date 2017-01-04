@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "b9285eaec364b296fa875d8ee5abb5fe6b5a88d5"
+    "signature": "b520dc07fc848d9b77b1eea5132b976817ad2f18"
   },
   "compilationOptions": {
     "defines": [
@@ -22,7 +22,8 @@
           "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Nancy": "2.0.0-clinteastwood",
-          "Microsoft.AspNetCore.Owin": "1.1.0"
+          "Microsoft.AspNetCore.Owin": "1.1.0",
+          "Microsoft.Extensions.Logging.Debug": "1.0.0"
         },
         "runtime": {
           "BlueBox.Delivery.Customers.Microservice.dll": {}
@@ -462,6 +463,18 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.Extensions.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Debug/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "System.Diagnostics.Debug": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.Logging.Debug.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.Extensions.Logging.Debug.dll": {}
         }
       },
       "Microsoft.Extensions.ObjectPool/1.1.0": {
@@ -2752,6 +2765,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-GN4gFFONP12KbFEG9rNFpXuz6D2Tybcm8+c1wilaQ1eSl9zVX0gVRrKw/YRwxdwbM3eK7nWfRRqJaQPzOjtLnA=="
+    },
+    "Microsoft.Extensions.Logging.Debug/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V8fP8pGJxieGa1DAYOF1RX+cCGGqdOGNoAQUzxmy27+qNzbHB/cUXc7mCZT72jPZMB4U12zSVWlIt26GMsUIOg=="
     },
     "Microsoft.Extensions.ObjectPool/1.1.0": {
       "type": "package",

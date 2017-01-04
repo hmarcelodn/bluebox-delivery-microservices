@@ -45,5 +45,10 @@ namespace BlueBox.Delivery.Customers.Microservice.Storage
 
             throw new InvalidOperationException("Customer not found in database.");
         }
+
+        public IEnumerable<Customer> GetCustomers()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

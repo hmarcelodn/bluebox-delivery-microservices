@@ -41,6 +41,7 @@
 --reference:C:\Users\hdelnegro\.nuget\packages\Microsoft.Extensions.Logging\1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.dll
 --reference:C:\Users\hdelnegro\.nuget\packages\Microsoft.Extensions.Logging.Abstractions\1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll
 --reference:C:\Users\hdelnegro\.nuget\packages\Microsoft.Extensions.Logging.Console\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Logging.Console.dll
+--reference:C:\Users\hdelnegro\.nuget\packages\Microsoft.Extensions.Logging.Debug\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Logging.Debug.dll
 --reference:C:\Users\hdelnegro\.nuget\packages\Microsoft.Extensions.ObjectPool\1.1.0\lib\netstandard1.3\Microsoft.Extensions.ObjectPool.dll
 --reference:C:\Users\hdelnegro\.nuget\packages\Microsoft.Extensions.Options\1.1.0\lib\netstandard1.0\Microsoft.Extensions.Options.dll
 --reference:C:\Users\hdelnegro\.nuget\packages\Microsoft.Extensions.PlatformAbstractions\1.0.0\lib\netstandard1.3\Microsoft.Extensions.PlatformAbstractions.dll
