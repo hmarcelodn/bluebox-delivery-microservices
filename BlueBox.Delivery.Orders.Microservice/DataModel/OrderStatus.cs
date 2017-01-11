@@ -1,4 +1,4 @@
-﻿namespace BlueBox.Delivery.Orders.Microservice.Aggregates
+﻿namespace BlueBox.Delivery.Orders.Microservice.DataModel
 {
     public enum OrderStatus
     {

@@ -1,17 +1,17 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
-using BlueBox.Delivery.Customers.Microservice.Model;
+using BlueBox.Delivery.Customers.Microservice.DataModel;
 
 namespace BlueBox.Delivery.Customers.Microservice.Storage
 {
     public class CustomerStorage : ICustomerStorage
     {
-        private static readonly Dictionary<int, Customer> _database = new Dictionary<int, Customer>();
+        private static IList<Customer> _database = new List<Customer>();
 
         public CustomerStorage()
         {
             _database.Add(
-                1,
                 new Customer()
                 {
                     CustomerId = 1,
@@ -24,7 +24,6 @@ namespace BlueBox.Delivery.Customers.Microservice.Storage
 
             _database.Add
                 (
-                    2,
                     new Customer()
                     {
                         CustomerId = 2,
@@ -38,9 +37,11 @@ namespace BlueBox.Delivery.Customers.Microservice.Storage
 
         public Customer GetCustomerById(int id)
         {
-            if (_database.ContainsKey(id))
+            var customer = _database.Where(cus => cus.CustomerId == id).FirstOrDefault();
+
+            if (customer != null)
             {
-                return _database[id];
+                return customer;
             }
 
             throw new InvalidOperationException("Customer not found in database.");
@@ -48,7 +49,7 @@ namespace BlueBox.Delivery.Customers.Microservice.Storage
 
         public IEnumerable<Customer> GetCustomers()
         {
-            throw new NotImplementedException();
+            return _database.AsEnumerable();
         }
     }
 }

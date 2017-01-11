@@ -9,6 +9,7 @@
 -nologo
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
 -out:"C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\bin\Debug\netcoreapp1.0\BlueBox.Delivery.Customers.Microservice.dll"
+-r:"C:\Users\hdelnegro\.nuget\packages\Microsoft.AspNetCore.Cors\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cors.dll"
 -r:"C:\Users\hdelnegro\.nuget\packages\Microsoft.AspNetCore.Diagnostics\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Diagnostics.dll"
 -r:"C:\Users\hdelnegro\.nuget\packages\Microsoft.AspNetCore.Diagnostics.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll"
 -r:"C:\Users\hdelnegro\.nuget\packages\Microsoft.AspNetCore.Hosting\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.dll"
@@ -134,7 +135,7 @@
 -resource:"C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\obj\Debug\netcoreapp1.0\BlueBox.Delivery.Customers.Microservicedotnet-compile.deps.json",BlueBox.Delivery.Customers.Microservice.deps.json
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Program.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Startup.cs"
-"C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Model\Customer.cs"
+"C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\DataModel\Customer.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Modules\CustomersModule.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Storage\CustomerStorage.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Storage\ICustomerStorage.cs"

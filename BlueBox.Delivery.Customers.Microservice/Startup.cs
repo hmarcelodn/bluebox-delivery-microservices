@@ -9,7 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Nancy.Owin;
 using Nancy;
-
 namespace BlueBox.Delivery.Customers.Microservice
 {
     public class Startup
@@ -18,13 +17,22 @@ namespace BlueBox.Delivery.Customers.Microservice
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(
+                options =>
+                    {
+                        options.AddPolicy("AllowAll", p => p.AllowAnyOrigin());
+                    }
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.UseOwin().UseNancy();
+            app.UseCors("AllowSpecificOrigin");
             loggerFactory.AddConsole().AddDebug();
+
+
         }
     }
 }

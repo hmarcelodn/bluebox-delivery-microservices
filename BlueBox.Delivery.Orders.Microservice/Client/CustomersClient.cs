@@ -1,5 +1,5 @@
-﻿using BlueBox.Delivery.Orders.Microservice.Aggregates;
-using BlueBox.Delivery.Orders.Microservice.Client.DTO;
+﻿using BlueBox.Delivery.Orders.Microservice.Client.DTO;
+using BlueBox.Delivery.Orders.Microservice.DataModel;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;

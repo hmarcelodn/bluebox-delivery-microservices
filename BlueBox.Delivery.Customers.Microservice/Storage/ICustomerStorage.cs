@@ -1,4 +1,4 @@
-﻿using BlueBox.Delivery.Customers.Microservice.Model;
+﻿using BlueBox.Delivery.Customers.Microservice.DataModel;
 using System.Collections.Generic;
 
 namespace BlueBox.Delivery.Customers.Microservice.Storage

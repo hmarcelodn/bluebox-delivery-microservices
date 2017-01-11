@@ -8,11 +8,26 @@ namespace BlueBox.Delivery.Customers.Microservice.Modules
         public CustomersModule(ICustomerStorage customerStorage) 
             : base("/customers")
         {
+            // Cors
+            After.AddItemToEndOfPipeline(
+                (ctx) => ctx.Response
+                    .WithHeader("Access-Control-Allow-Origin", "*")
+                    .WithHeader("Access-Control-Allow-Methods", "POST,GET")
+                    .WithHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-type")
+            );
+
+            // GET customers
+            Get("", parameters =>
+            {
+                return customerStorage.GetCustomers();
+            });
+
+            // GET customer
             Get("/{customerid:int}", parameters =>
             {
                 var customerId = (int)parameters.customerid;
 
-                return this.Negotiate.WithModel(customerStorage.GetCustomerById(customerId));
+                return customerStorage.GetCustomerById(customerId);
             });
         }
     }

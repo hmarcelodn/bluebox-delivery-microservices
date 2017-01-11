@@ -1,4 +1,4 @@
-﻿namespace BlueBox.Delivery.Customers.Microservice.Model
+﻿namespace BlueBox.Delivery.Customers.Microservice.DataModel
 {
     public class Customer
     {

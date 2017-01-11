@@ -1,4 +1,4 @@
-﻿using BlueBox.Delivery.Orders.Microservice.Aggregates;
+﻿using BlueBox.Delivery.Orders.Microservice.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

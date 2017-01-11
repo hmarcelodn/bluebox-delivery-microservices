@@ -1,5 +1,5 @@
-﻿using BlueBox.Delivery.Orders.Microservice.Aggregates;
-using BlueBox.Delivery.Orders.Microservice.Client;
+﻿using BlueBox.Delivery.Orders.Microservice.Client;
+using BlueBox.Delivery.Orders.Microservice.DataModel;
 using BlueBox.Delivery.Orders.Microservice.Model;
 using BlueBox.Delivery.Orders.Microservice.Storage;
 using Nancy;
@@ -15,6 +15,14 @@ namespace BlueBox.Delivery.Orders.Microservice.Modules
         ) 
             : base("/orders")
         {
+            // Cors
+            After.AddItemToEndOfPipeline(
+                (ctx) => ctx.Response
+                    .WithHeader("Access-Control-Allow-Origin", "*")
+                    .WithHeader("Access-Control-Allow-Methods", "POST,GET")
+                    .WithHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-type")
+            );
+
             // Note: Get All Orders Availables for Selected Customer
             Get("/{customerid:int}", parameters =>
             {
@@ -44,7 +52,7 @@ namespace BlueBox.Delivery.Orders.Microservice.Modules
             // Note: Update the order
             Put("/package", parameters =>
             {
-                var viewModel = this.Bind<PackageViewModel>();
+                var viewModel = this.Bind<PackageModel>();
 
                 var order = orderStorage.GetOrderByOrderId(viewModel.OrderId);
                 order.SetPackageInformation(

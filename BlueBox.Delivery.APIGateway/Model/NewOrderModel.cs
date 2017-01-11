@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace BlueBox.Delivery.Orders.Microservice.Model
+namespace BlueBox.Delivery.APIGateway.Model
 {
-    public class PackageViewModel
+    public class NewOrderModel
     {
-        public Guid OrderId { get; set; }
+        public int CustomerId { get; set; }
 
         public DateTime DeliveryDate { get; set; }
 

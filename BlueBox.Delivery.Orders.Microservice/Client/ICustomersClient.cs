@@ -1,4 +1,4 @@
-﻿using BlueBox.Delivery.Orders.Microservice.Aggregates;
+﻿using BlueBox.Delivery.Orders.Microservice.DataModel;
 using System.Threading.Tasks;
 
 namespace BlueBox.Delivery.Orders.Microservice.Client

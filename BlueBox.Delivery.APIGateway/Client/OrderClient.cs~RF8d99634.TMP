@@ -1,0 +1,50 @@
+﻿using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+
+namespace BlueBox.Delivery.APIGateway.Client
+{
+    public class OrderClient : IOrderClient
+    {
+        private static string ordersBaseUrl = @"http://localhost:5001";
+        private static string newOrderPathTemplate = @"/orders/";
+
+        public async Task<object> CreateOrderFromOrdersService(int customerId)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri(ordersBaseUrl);
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpContent content = new StringContent(JsonConvert.SerializeObject(new { customerId = customerId }));
+                var httpResponse = await httpClient.PostAsync("", content).ConfigureAwait(false);
+            }
+
+            return null;
+        }
+
+        public Task<IEnumerable<object>> GetAllCustomerOrdersFromOrdersService(int customerid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<object>> GetAllOrdersFromOrdersService()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> GetOrderFromOrdersService(Guid orderId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> UpdateOrderWithPackageFromOrdersService(object package)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

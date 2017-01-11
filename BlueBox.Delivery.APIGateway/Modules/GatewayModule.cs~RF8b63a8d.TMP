@@ -1,0 +1,51 @@
+﻿using BlueBox.Delivery.APIGateway.Client;
+using Nancy;
+using System.Threading.Tasks;
+
+namespace BlueBox.Delivery.APIGateway.Modules
+{
+    public class GatewayModule : NancyModule
+    {
+        public GatewayModule(
+            ICustomerClient customerClient,
+            IOrderClient orderClient)
+        {
+            // Cors
+            After.AddItemToEndOfPipeline(
+                (ctx) => ctx.Response
+                    .WithHeader("Access-Control-Allow-Origin", "*")
+                    .WithHeader("Access-Control-Allow-Methods", "POST,GET")
+                    .WithHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-type")
+            );
+
+            // GET Customers list
+            Get("/customerlist", _ =>
+            {
+                return customerClient.GetCustomers();
+            });
+
+            // GET Orders by CustomerId
+            Get("/orders/{customerid:int}", parameters =>
+            {
+                var customerId = (int)parameters.customerid;
+
+                return null;
+            });
+
+            // POST Create a new Order
+            Post("/orders", async (parameters, _) =>
+            {
+                var customerId = (int)parameters.customerid;
+
+                return await orderClient.CreateOrderFromOrdersService(customerId);
+            });
+
+            // PUT A new package
+            Put("/orders/package", async (parameters, _) =>
+            {
+
+                return null;
+            });
+        }
+    }
+}
