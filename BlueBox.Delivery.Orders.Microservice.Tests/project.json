@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Nancy.Testing": "2.0.0-clinteastwood",
+    "NETStandard.Library": "1.6.0",
+    "xunit": "2.2.0-beta4-build3444"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
