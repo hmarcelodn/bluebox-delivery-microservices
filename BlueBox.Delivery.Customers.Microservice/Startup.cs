@@ -32,13 +32,22 @@ namespace BlueBox.Delivery.Customers.Microservice
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             // Middleware #1
-            app.UseOwin(buildFunc => buildFunc(next => new ConsoleMiddleware(next).Invoke));
+            app.UseOwin(buildFunc => buildFunc(next => new MonitoringMiddleware(next,  HealthCheck).Invoke));
 
             // Middleware #2
+            app.UseOwin(buildFunc => buildFunc(next => new ConsoleMiddleware(next).Invoke));
+
+            // Middleware #3
             app.UseOwin().UseNancy(opt => opt.Bootstrapper = new Bootstraper());
 
             app.UseCors("AllowSpecificOrigin");
             loggerFactory.AddConsole().AddDebug();
+        }
+
+        // Health Check to Monitoring Middleware
+        public async Task<bool> HealthCheck()
+        {
+            return await Task.FromResult(true);
         }
     }
 }

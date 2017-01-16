@@ -140,4 +140,5 @@
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Startup.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Middleware\ConsoleMiddleware.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Middleware\LibOwin.cs"
+"C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Middleware\MonitoringMiddleware.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Modules\CustomersModule.cs"
