@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0/",
-    "signature": "0d60d60036443f5b2995094c9c0f7a3c6d32d84c"
+    "signature": "c92b95b98d69e5e8e766248bb2af1162cdac3314"
   },
   "compilationOptions": {
     "defines": [
@@ -22,7 +22,8 @@
           "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Nancy": "2.0.0-clinteastwood",
-          "Microsoft.AspNetCore.Owin": "1.1.0"
+          "Microsoft.AspNetCore.Owin": "1.1.0",
+          "Polly": "5.0.3"
         },
         "compile": {
           "BlueBox.Delivery.APIGateway.dll": {}
@@ -733,6 +734,14 @@
         },
         "compile": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Polly/5.0.3": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Polly.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -2179,7 +2188,8 @@
           "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Nancy": "2.0.0-clinteastwood",
-          "Microsoft.AspNetCore.Owin": "1.1.0"
+          "Microsoft.AspNetCore.Owin": "1.1.0",
+          "Polly": "5.0.3"
         },
         "runtime": {
           "BlueBox.Delivery.APIGateway.dll": {}
@@ -2884,6 +2894,14 @@
         },
         "runtime": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Polly/5.0.3": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Polly.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -4472,6 +4490,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw=="
+    },
+    "Polly/5.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Kg3lxFgH8f51OrYTx2DVxSxCCXgqHq+Yc6nGSrfkejZADpChAy/CFo8MiN53Se5QshOrAjylP74qIPjtGz8bag=="
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

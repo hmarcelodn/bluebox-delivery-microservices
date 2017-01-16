@@ -5,6 +5,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Polly;
 
 namespace BlueBox.Delivery.Orders.Microservice.Client
 {
@@ -12,6 +13,10 @@ namespace BlueBox.Delivery.Orders.Microservice.Client
     {
         private static string customersBaseUrl = @"http://localhost:5001";
         private static string getCustomerPathTemplate = @"/customers/{0}";
+        private Policy _circuitBreakerPolicy = 
+            Policy.Handle<Exception>()
+                  .CircuitBreakerAsync(5, TimeSpan.FromMinutes(2));
+
 
         public async Task<Customer> GetCustomer(int customerId)
         {
@@ -20,7 +25,8 @@ namespace BlueBox.Delivery.Orders.Microservice.Client
 
         protected async Task<Customer> GetCustomerFromCustomerService(int customerId)
         {
-            var response = await RequestCustomerServiceFromCustomerService(customerId).ConfigureAwait(false);
+            var response = await _circuitBreakerPolicy.ExecuteAsync(
+                () => RequestCustomerServiceFromCustomerService(customerId));
 
             return await ConvertToOrderCustomer(response).ConfigureAwait(false);
         }

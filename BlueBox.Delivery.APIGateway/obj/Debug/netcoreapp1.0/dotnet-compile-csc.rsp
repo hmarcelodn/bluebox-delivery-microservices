@@ -46,6 +46,7 @@
 -r:"C:\Users\hdelnegro\.nuget\packages\Microsoft.Win32.Primitives\4.3.0\ref\netstandard1.3\Microsoft.Win32.Primitives.dll"
 -r:"C:\Users\hdelnegro\.nuget\packages\Nancy\2.0.0-clinteastwood\lib\netstandard1.6\Nancy.dll"
 -r:"C:\Users\hdelnegro\.nuget\packages\Newtonsoft.Json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll"
+-r:"C:\Users\hdelnegro\.nuget\packages\Polly\5.0.3\lib\netstandard1.0\Polly.dll"
 -r:"C:\Users\hdelnegro\.nuget\packages\System.AppContext\4.3.0\ref\netstandard1.6\System.AppContext.dll"
 -r:"C:\Users\hdelnegro\.nuget\packages\System.Buffers\4.3.0\lib\netstandard1.1\System.Buffers.dll"
 -r:"C:\Users\hdelnegro\.nuget\packages\System.Collections\4.3.0\ref\netstandard1.3\System.Collections.dll"

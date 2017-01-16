@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "b520dc07fc848d9b77b1eea5132b976817ad2f18"
+    "signature": "df92f243bced4cf6e2aa16937fa641853f7c822a"
   },
   "compilationOptions": {
     "defines": [
@@ -25,7 +25,8 @@
           "Nancy": "2.0.0-clinteastwood",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "BlueBox.Delivery.Orders.Data": "1.0.0",
-          "BlueBox.Delivery.Orders.Domain": "1.0.0"
+          "BlueBox.Delivery.Orders.Domain": "1.0.0",
+          "Polly": "5.0.3"
         },
         "runtime": {
           "BlueBox.Delivery.Orders.Microservice.dll": {}
@@ -672,6 +673,17 @@
         },
         "compile": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Polly/5.0.3": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Polly.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/Polly.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -2850,6 +2862,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw=="
+    },
+    "Polly/5.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Kg3lxFgH8f51OrYTx2DVxSxCCXgqHq+Yc6nGSrfkejZADpChAy/CFo8MiN53Se5QshOrAjylP74qIPjtGz8bag=="
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

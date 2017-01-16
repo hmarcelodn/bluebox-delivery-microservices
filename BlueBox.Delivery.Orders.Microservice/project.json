@@ -12,7 +12,8 @@
     "Nancy": "2.0.0-clinteastwood",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "BlueBox.Delivery.Orders.Data": "1.0.0-*",
-    "BlueBox.Delivery.Orders.Domain": "1.0.0-*"
+    "BlueBox.Delivery.Orders.Domain": "1.0.0-*",
+    "Polly": "5.0.3"
   },
 
   "tools": {

@@ -1,6 +1,7 @@
 ﻿using BlueBox.Delivery.APIGateway.Client.DTO;
 using BlueBox.Delivery.APIGateway.Model;
 using Newtonsoft.Json;
+using Polly;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -16,6 +17,11 @@ namespace BlueBox.Delivery.APIGateway.Client
         private static string newPackagePathTemplate = @"/orders/package";
         private static string customerOrdersPathTemplate = @"/orders/{0}";
 
+        private Policy _circuitBreakerPolicy =
+            Policy.Handle<Exception>()
+                  .CircuitBreakerAsync(5, TimeSpan.FromMinutes(2));
+
+        // TODO: Add Circuit Breaker Policy
         public async Task<Guid> CreateOrderFromOrdersService(int customerId)
         {
             using (var httpClient = new HttpClient())
@@ -42,6 +48,7 @@ namespace BlueBox.Delivery.APIGateway.Client
             }
         }
 
+        // TODO: Add Circuit Breaker Policy
         public async Task UpdateOrderWithPackageFromOrdersService(Guid orderId, NewOrderModel orderModel)
         {
             using (var httpClient = new HttpClient())
@@ -68,6 +75,7 @@ namespace BlueBox.Delivery.APIGateway.Client
             }
         }
 
+        // TODO: Add Circuit Breaker Policy
         public async Task<IEnumerable<object>> GetAllCustomerOrdersFromOrdersService(int customerId)
         {
             var customerOrdersResource = string.Format(customerOrdersPathTemplate, customerId);
@@ -89,11 +97,13 @@ namespace BlueBox.Delivery.APIGateway.Client
             }
         }
 
+        // TODO: Add Circuit Breaker Policy
         public async Task<IEnumerable<object>> GetAllOrdersFromOrdersService()
         {
             throw new NotImplementedException();
         }
 
+        // TODO: Add Circuit Breaker Policy
         public async Task<object> GetOrderFromOrdersService(Guid orderId)
         {
             throw new NotImplementedException();

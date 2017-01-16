@@ -1,5 +1,6 @@
 ﻿using BlueBox.Delivery.APIGateway.Model;
 using Newtonsoft.Json;
+using Polly;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -12,6 +13,9 @@ namespace BlueBox.Delivery.APIGateway.Client
     {
         private static string customersBaseUrl = @"http://localhost:5001";
         private static string getCustomerListPathTemplate = @"/customers";
+        private Policy _circuitBreakerPolicy =
+                Policy.Handle<Exception>()
+                      .CircuitBreakerAsync(5, TimeSpan.FromMinutes(2));
 
         public async Task<IEnumerable<CustomerModel>> GetCustomers()
         {
@@ -20,7 +24,7 @@ namespace BlueBox.Delivery.APIGateway.Client
 
         protected async Task<IEnumerable<CustomerModel>> GetCustomerFromCustomersService()
         {
-            var response = await RequestCustomerServiceFromCustomerService().ConfigureAwait(false);
+            var response = await _circuitBreakerPolicy.ExecuteAsync(() => RequestCustomerServiceFromCustomerService());
 
             return await ConvertToOrderCustomerList(response).ConfigureAwait(false);
         }
