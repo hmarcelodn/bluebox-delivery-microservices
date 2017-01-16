@@ -141,6 +141,8 @@
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Orders.Microservice\Client\CustomersClient.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Orders.Microservice\Client\ICustomersClient.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Orders.Microservice\Client\DTO\CustomerDTO.cs"
+"C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Orders.Microservice\Middleware\ConsoleMiddleware.cs"
+"C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Orders.Microservice\Middleware\LibOwin.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Orders.Microservice\Model\NewOrderModel.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Orders.Microservice\Model\PackageModel.cs"
 "C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Orders.Microservice\Modules\OrdersModule.cs"

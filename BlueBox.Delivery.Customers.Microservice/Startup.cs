@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Nancy.Owin;
 using Nancy;
+using LibOwin;
+using BlueBox.Delivery.Customers.Microservice.Middleware;
+
 namespace BlueBox.Delivery.Customers.Microservice
 {
     public class Startup
@@ -28,7 +31,12 @@ namespace BlueBox.Delivery.Customers.Microservice
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            // Middleware #1
+            app.UseOwin(buildFunc => buildFunc(next => new ConsoleMiddleware(next).Invoke));
+
+            // Middleware #2
             app.UseOwin().UseNancy(opt => opt.Bootstrapper = new Bootstraper());
+
             app.UseCors("AllowSpecificOrigin");
             loggerFactory.AddConsole().AddDebug();
         }
