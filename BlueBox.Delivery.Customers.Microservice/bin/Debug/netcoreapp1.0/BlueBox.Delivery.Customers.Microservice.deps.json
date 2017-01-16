@@ -24,7 +24,9 @@
           "Nancy": "2.0.0-clinteastwood",
           "Microsoft.AspNetCore.Owin": "1.1.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
-          "Microsoft.AspNetCore.Cors": "1.0.0"
+          "Microsoft.AspNetCore.Cors": "1.0.0",
+          "BlueBox.Delivery.Customers.Data": "1.0.0",
+          "BlueBox.Delivery.Customers.Domain": "1.0.0"
         },
         "runtime": {
           "BlueBox.Delivery.Customers.Microservice.dll": {}
@@ -1905,6 +1907,29 @@
           "ref/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "BlueBox.Delivery.Customers.Data/1.0.0": {
+        "dependencies": {
+          "BlueBox.Delivery.Customers.Domain": "1.0.0",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "BlueBox.Delivery.Customers.Data.dll": {}
+        },
+        "compile": {
+          "BlueBox.Delivery.Customers.Data.dll": {}
+        }
+      },
+      "BlueBox.Delivery.Customers.Domain/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "BlueBox.Delivery.Customers.Domain.dll": {}
+        },
+        "compile": {
+          "BlueBox.Delivery.Customers.Domain.dll": {}
+        }
+      },
       "Libuv/1.9.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -3260,6 +3285,16 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-FrazwwqfIXTfq23mfv4zH+BjqkSFNaNFBtjzu3I9NRmG8EELYyrv/fJnttCIwRMFRR/YKXF1hmsMmMEnl55HGw=="
+    },
+    "BlueBox.Delivery.Customers.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlueBox.Delivery.Customers.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Libuv/1.9.0": {
       "type": "package",

@@ -3083,6 +3083,33 @@
         "runtime": {
           "lib/netstandard1.3/_._": {}
         }
+      },
+      "BlueBox.Delivery.Orders.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "BlueBox.Delivery.Orders.Domain": "1.0.0",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/BlueBox.Delivery.Orders.Data.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/BlueBox.Delivery.Orders.Data.dll": {}
+        }
+      },
+      "BlueBox.Delivery.Orders.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/BlueBox.Delivery.Orders.Domain.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/BlueBox.Delivery.Orders.Domain.dll": {}
+        }
       }
     }
   },
@@ -8781,10 +8808,22 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "BlueBox.Delivery.Orders.Data/1.0.0": {
+      "type": "project",
+      "path": "../BlueBox.Delivery.Orders.Data/project.json",
+      "msbuildProject": "../BlueBox.Delivery.Orders.Data/BlueBox.Delivery.Orders.Data.xproj"
+    },
+    "BlueBox.Delivery.Orders.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BlueBox.Delivery.Orders.Domain/project.json",
+      "msbuildProject": "../BlueBox.Delivery.Orders.Domain/BlueBox.Delivery.Orders.Domain.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "BlueBox.Delivery.Orders.Data >= 1.0.0-*",
+      "BlueBox.Delivery.Orders.Domain >= 1.0.0-*",
       "Microsoft.AspNetCore.Diagnostics >= 1.0.0",
       "Microsoft.AspNetCore.Owin >= 1.1.0",
       "Microsoft.AspNetCore.Server.IISIntegration >= 1.0.0",

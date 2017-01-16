@@ -1,12 +1,11 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using BlueBox.Delivery.APIGateway.Client.DTO;
+using BlueBox.Delivery.APIGateway.Model;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Newtonsoft.Json;
-using BlueBox.Delivery.APIGateway.Client.DTO;
-using BlueBox.Delivery.APIGateway.Model;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace BlueBox.Delivery.APIGateway.Client
 {
@@ -90,12 +89,12 @@ namespace BlueBox.Delivery.APIGateway.Client
             }
         }
 
-        public Task<IEnumerable<object>> GetAllOrdersFromOrdersService()
+        public async Task<IEnumerable<object>> GetAllOrdersFromOrdersService()
         {
             throw new NotImplementedException();
         }
 
-        public Task<object> GetOrderFromOrdersService(Guid orderId)
+        public async Task<object> GetOrderFromOrdersService(Guid orderId)
         {
             throw new NotImplementedException();
         }

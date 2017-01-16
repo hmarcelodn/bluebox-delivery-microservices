@@ -24,7 +24,9 @@
           "Nancy": "2.0.0-clinteastwood",
           "Microsoft.AspNetCore.Owin": "1.1.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
-          "Microsoft.AspNetCore.Cors": "1.0.0"
+          "Microsoft.AspNetCore.Cors": "1.0.0",
+          "BlueBox.Delivery.Customers.Data": "1.0.0",
+          "BlueBox.Delivery.Customers.Domain": "1.0.0"
         },
         "compile": {
           "BlueBox.Delivery.Customers.Microservice.dll": {}
@@ -2190,6 +2192,23 @@
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XPath": "4.0.1"
         }
+      },
+      "BlueBox.Delivery.Customers.Data/1.0.0": {
+        "dependencies": {
+          "BlueBox.Delivery.Customers.Domain": "1.0.0",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "BlueBox.Delivery.Customers.Data.dll": {}
+        }
+      },
+      "BlueBox.Delivery.Customers.Domain/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "BlueBox.Delivery.Customers.Domain.dll": {}
+        }
       }
     },
     ".NETCoreApp,Version=v1.0/": {
@@ -2203,7 +2222,9 @@
           "Nancy": "2.0.0-clinteastwood",
           "Microsoft.AspNetCore.Owin": "1.1.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
-          "Microsoft.AspNetCore.Cors": "1.0.0"
+          "Microsoft.AspNetCore.Cors": "1.0.0",
+          "BlueBox.Delivery.Customers.Data": "1.0.0",
+          "BlueBox.Delivery.Customers.Domain": "1.0.0"
         },
         "runtime": {
           "BlueBox.Delivery.Customers.Microservice.dll": {}
@@ -4243,6 +4264,23 @@
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XPath": "4.0.1"
         }
+      },
+      "BlueBox.Delivery.Customers.Data/1.0.0": {
+        "dependencies": {
+          "BlueBox.Delivery.Customers.Domain": "1.0.0",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "BlueBox.Delivery.Customers.Data.dll": {}
+        }
+      },
+      "BlueBox.Delivery.Customers.Domain/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "BlueBox.Delivery.Customers.Domain.dll": {}
+        }
       }
     }
   },
@@ -5101,6 +5139,16 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-FLhdYJx4331oGovQypQ8JIw2kEmNzCsjVOVYY/16kZTUoquZG85oVn7yUhBE2OZt1yGPSXAL0HTEfzjlbNpM7Q=="
+    },
+    "BlueBox.Delivery.Customers.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlueBox.Delivery.Customers.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

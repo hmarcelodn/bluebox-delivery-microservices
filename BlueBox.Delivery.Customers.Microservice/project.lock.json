@@ -3098,6 +3098,33 @@
         "runtime": {
           "lib/netstandard1.3/_._": {}
         }
+      },
+      "BlueBox.Delivery.Customers.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "BlueBox.Delivery.Customers.Domain": "1.0.0",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/BlueBox.Delivery.Customers.Data.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/BlueBox.Delivery.Customers.Data.dll": {}
+        }
+      },
+      "BlueBox.Delivery.Customers.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/BlueBox.Delivery.Customers.Domain.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/BlueBox.Delivery.Customers.Domain.dll": {}
+        }
       }
     }
   },
@@ -8809,10 +8836,22 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "BlueBox.Delivery.Customers.Data/1.0.0": {
+      "type": "project",
+      "path": "../BlueBox.Delivery.Customers.Data/project.json",
+      "msbuildProject": "../BlueBox.Delivery.Customers.Data/BlueBox.Delivery.Customers.Data.xproj"
+    },
+    "BlueBox.Delivery.Customers.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BlueBox.Delivery.Customers.Domain/project.json",
+      "msbuildProject": "../BlueBox.Delivery.Customers.Domain/BlueBox.Delivery.Customers.Domain.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "BlueBox.Delivery.Customers.Data >= 1.0.0-*",
+      "BlueBox.Delivery.Customers.Domain >= 1.0.0-*",
       "Microsoft.AspNetCore.Cors >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics >= 1.0.0",
       "Microsoft.AspNetCore.Owin >= 1.1.0",

@@ -11,7 +11,9 @@
     "Nancy": "2.0.0-clinteastwood",
     "Microsoft.AspNetCore.Owin": "1.1.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
-    "Microsoft.AspNetCore.Cors": "1.0.0"
+    "Microsoft.AspNetCore.Cors": "1.0.0",
+    "BlueBox.Delivery.Customers.Data": "1.0.0-*",
+    "BlueBox.Delivery.Customers.Domain": "1.0.0-*"
   },
 
   "tools": {

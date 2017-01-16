@@ -55,4 +55,6 @@
 --reference:C:\Users\hdelnegro\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\hdelnegro\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\hdelnegro\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
+C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Domain\Domain\Customer.cs
 C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Domain\Properties\AssemblyInfo.cs
+C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Domain\Storage\ICustomerStorage.cs

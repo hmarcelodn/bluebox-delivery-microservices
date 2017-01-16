@@ -1,5 +1,5 @@
-﻿using BlueBox.Delivery.Orders.Microservice.Client.DTO;
-using BlueBox.Delivery.Orders.Microservice.DataModel;
+﻿using BlueBox.Delivery.Orders.Domain.Domain;
+using BlueBox.Delivery.Orders.Microservice.Client.DTO;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
@@ -13,19 +13,19 @@ namespace BlueBox.Delivery.Orders.Microservice.Client
         private static string customersBaseUrl = @"http://localhost:5001";
         private static string getCustomerPathTemplate = @"/customers/{0}";
 
-        public async Task<OrderCustomer> GetCustomer(int customerId)
+        public async Task<Customer> GetCustomer(int customerId)
         {
             return await GetCustomerFromCustomerService(customerId).ConfigureAwait(false);
         }
 
-        protected async Task<OrderCustomer> GetCustomerFromCustomerService(int customerId)
+        protected async Task<Customer> GetCustomerFromCustomerService(int customerId)
         {
             var response = await RequestCustomerServiceFromCustomerService(customerId).ConfigureAwait(false);
 
             return await ConvertToOrderCustomer(response).ConfigureAwait(false);
         }
 
-        protected async Task<OrderCustomer> ConvertToOrderCustomer(HttpResponseMessage response)
+        protected async Task<Customer> ConvertToOrderCustomer(HttpResponseMessage response)
         {
             response.EnsureSuccessStatusCode();
 
@@ -33,7 +33,7 @@ namespace BlueBox.Delivery.Orders.Microservice.Client
                 await response.Content.ReadAsStringAsync().ConfigureAwait(false)
             );
 
-            return new OrderCustomer()
+            return new Customer()
             {
                 CustomerId = customerDto .CustomerId,
                 CustomerAddress = customerDto.Address

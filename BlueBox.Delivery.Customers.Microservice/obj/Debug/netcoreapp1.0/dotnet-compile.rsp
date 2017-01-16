@@ -136,10 +136,10 @@
 --reference:C:\Users\hdelnegro\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\hdelnegro\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:C:\Users\hdelnegro\.nuget\packages\System.Xml.XmlSerializer\4.0.11\ref\netstandard1.3\System.Xml.XmlSerializer.dll
+--reference:C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Data\bin\Debug\netstandard1.6\BlueBox.Delivery.Customers.Data.dll
+--reference:C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Domain\bin\Debug\netstandard1.6\BlueBox.Delivery.Customers.Domain.dll
 --resource:"C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\obj\Debug\netcoreapp1.0\BlueBox.Delivery.Customers.Microservicedotnet-compile.deps.json",BlueBox.Delivery.Customers.Microservice.deps.json
+C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Bootstraper.cs
 C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Program.cs
 C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Startup.cs
-C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\DataModel\Customer.cs
 C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Modules\CustomersModule.cs
-C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Storage\CustomerStorage.cs
-C:\Users\hdelnegro\Documents\Belatrix\Bristlecone\BlueBox.Delivery.Solution\BlueBox.Delivery.Customers.Microservice\Storage\ICustomerStorage.cs

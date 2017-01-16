@@ -1,5 +1,5 @@
 ﻿using Nancy;
-using BlueBox.Delivery.Customers.Microservice.Storage;
+using BlueBox.Delivery.Customers.Domain;
 
 namespace BlueBox.Delivery.Customers.Microservice.Modules
 {
@@ -16,13 +16,11 @@ namespace BlueBox.Delivery.Customers.Microservice.Modules
                     .WithHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-type")
             );
 
-            // GET customers
             Get("", parameters =>
             {
                 return customerStorage.GetCustomers();
             });
 
-            // GET customer
             Get("/{customerid:int}", parameters =>
             {
                 var customerId = (int)parameters.customerid;

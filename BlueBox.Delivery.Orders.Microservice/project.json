@@ -10,7 +10,9 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.AspNetCore.Owin": "1.1.0",
     "Nancy": "2.0.0-clinteastwood",
-    "Microsoft.Extensions.Logging.Debug": "1.0.0"
+    "Microsoft.Extensions.Logging.Debug": "1.0.0",
+    "BlueBox.Delivery.Orders.Data": "1.0.0-*",
+    "BlueBox.Delivery.Orders.Domain": "1.0.0-*"
   },
 
   "tools": {

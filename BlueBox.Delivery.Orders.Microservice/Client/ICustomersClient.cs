@@ -1,10 +1,10 @@
-﻿using BlueBox.Delivery.Orders.Microservice.DataModel;
+﻿using BlueBox.Delivery.Orders.Domain.Domain;
 using System.Threading.Tasks;
 
 namespace BlueBox.Delivery.Orders.Microservice.Client
 {
     public interface ICustomersClient
     {
-        Task<OrderCustomer> GetCustomer(int customerid);
+        Task<Customer> GetCustomer(int customerid);
     }
 }
