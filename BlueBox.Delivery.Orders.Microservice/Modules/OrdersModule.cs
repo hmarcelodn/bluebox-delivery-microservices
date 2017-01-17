@@ -4,6 +4,7 @@ using BlueBox.Delivery.Orders.Microservice.Client;
 using BlueBox.Delivery.Orders.Microservice.Model;
 using Nancy;
 using Nancy.ModelBinding;
+using Nancy.TinyIoc;
 
 namespace BlueBox.Delivery.Orders.Microservice.Modules
 {
@@ -20,7 +21,7 @@ namespace BlueBox.Delivery.Orders.Microservice.Modules
                     .WithHeader("Access-Control-Allow-Origin", "*")
                     .WithHeader("Access-Control-Allow-Methods", "POST,GET")
                     .WithHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-type")
-            );
+            );            
 
             Get("/{customerid:int}", parameters =>
             {

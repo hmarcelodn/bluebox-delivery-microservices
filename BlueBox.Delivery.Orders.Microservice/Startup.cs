@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Nancy.Owin;
 using BlueBox.Delivery.Orders.Microservice.Middleware;
+using Serilog;
+using BlueBox.Delivery.Customers.Microservice.Middleware;
 
 namespace BlueBox.Delivery.Orders.Microservice
 {
@@ -23,13 +25,35 @@ namespace BlueBox.Delivery.Orders.Microservice
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            // Middleware #1
-            app.UseOwin(buildFunc => buildFunc(next => new ConsoleMiddleware(next).Invoke));
+            // SeriLog
+            var log = ConfigureLogger();
 
-            // Middleware #2
-            app.UseOwin().UseNancy(opt => opt.Bootstrapper = new Bootstraper());
+            // Middlewares
+            app.UseOwin(buildFunc =>
+            {
+                buildFunc(next => GlobalErrorLogging.Middleware(next, log));
+                buildFunc(next => CorrelationToken.Middleware(next, log));
+                buildFunc(next => RequestLogging.Middleware(next, log));
+                buildFunc(next => new MonitoringMiddleware(next, HealthCheck).Invoke);
+                buildFunc(next => new ConsoleMiddleware(next).Invoke);
+                buildFunc.UseNancy(opt => opt.Bootstrapper = new Bootstraper(log));                
+            });
+        }
 
-            loggerFactory.AddConsole().AddDebug();
+        // Health Check to Monitoring Middleware
+        private async Task<bool> HealthCheck()
+        {
+            return await Task.FromResult(true);
+        }
+
+        private Serilog.ILogger ConfigureLogger()
+        {
+            return new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.ColoredConsole(
+                    Serilog.Events.LogEventLevel.Verbose,
+                    "{NewLiine}{Timestamp:HH:mm:ss} [{Level}] ({CorrelationToken}) {Message}{NewLine}{Exception}")
+                    .CreateLogger();
         }
     }
 }

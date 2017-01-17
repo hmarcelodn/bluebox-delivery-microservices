@@ -1181,6 +1181,42 @@
           }
         }
       },
+      "Serilog/2.4.0-dev-00767": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "System.Collections": "4.0.11",
+          "System.Collections.NonGeneric": "4.0.1",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.Linq": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
+      "Serilog.Sinks.ColoredConsole/2.1.0-dev-00713": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "System.Console": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.ColoredConsole.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.ColoredConsole.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -4163,6 +4199,34 @@
         "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "Serilog/2.4.0-dev-00767": {
+      "sha512": "m2Q024SWZ+M1cn9YDmjCtIliOK8JgtOR+xLOKuqbsXysNbSfwqur7+Gbs/HkSaME3hmoP4OgZ5EQ6sBLNJ2Ljw==",
+      "type": "package",
+      "path": "Serilog/2.4.0-dev-00767",
+      "files": [
+        "Serilog.2.4.0-dev-00767.nupkg.sha512",
+        "Serilog.nuspec",
+        "lib/net45/Serilog.dll",
+        "lib/net45/Serilog.xml",
+        "lib/net46/Serilog.dll",
+        "lib/net46/Serilog.xml",
+        "lib/netstandard1.0/Serilog.dll",
+        "lib/netstandard1.0/Serilog.xml",
+        "lib/netstandard1.3/Serilog.dll",
+        "lib/netstandard1.3/Serilog.xml"
+      ]
+    },
+    "Serilog.Sinks.ColoredConsole/2.1.0-dev-00713": {
+      "sha512": "rVeOusrk9vWxUxb1C73M1y+STk4ZzbKXPDCuXOWteeGHEe/dBdm0uk9c1pddIL9Opcf+iuET5nlDyfwIPSoK1Q==",
+      "type": "package",
+      "path": "Serilog.Sinks.ColoredConsole/2.1.0-dev-00713",
+      "files": [
+        "Serilog.Sinks.ColoredConsole.2.1.0-dev-00713.nupkg.sha512",
+        "Serilog.Sinks.ColoredConsole.nuspec",
+        "lib/net45/Serilog.Sinks.ColoredConsole.dll",
+        "lib/netstandard1.3/Serilog.Sinks.ColoredConsole.dll"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -8860,7 +8924,9 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.0",
-      "Nancy >= 2.0.0-clinteastwood"
+      "Nancy >= 2.0.0-clinteastwood",
+      "Serilog >= 2.4.0-dev-00767",
+      "Serilog.Sinks.ColoredConsole >= 2.1.0-dev-00713"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

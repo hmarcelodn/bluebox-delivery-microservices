@@ -13,7 +13,9 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "BlueBox.Delivery.Orders.Data": "1.0.0-*",
     "BlueBox.Delivery.Orders.Domain": "1.0.0-*",
-    "Polly": "5.0.3"
+    "Polly": "5.0.3",
+    "Serilog": "2.4.0-dev-00767",
+    "Serilog.Sinks.ColoredConsole": "2.1.0-dev-00713"
   },
 
   "tools": {

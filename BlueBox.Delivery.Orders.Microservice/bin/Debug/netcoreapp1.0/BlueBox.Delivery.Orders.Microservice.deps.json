@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "df92f243bced4cf6e2aa16937fa641853f7c822a"
+    "signature": "13eb4d1686ad04773f75134b6693f177ac56b49e"
   },
   "compilationOptions": {
     "defines": [
@@ -26,7 +26,9 @@
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "BlueBox.Delivery.Orders.Data": "1.0.0",
           "BlueBox.Delivery.Orders.Domain": "1.0.0",
-          "Polly": "5.0.3"
+          "Polly": "5.0.3",
+          "Serilog": "2.4.0-dev-00767",
+          "Serilog.Sinks.ColoredConsole": "2.1.0-dev-00713"
         },
         "runtime": {
           "BlueBox.Delivery.Orders.Microservice.dll": {}
@@ -809,6 +811,40 @@
             "rid": "ubuntu.16.10-x64",
             "assetType": "native"
           }
+        }
+      },
+      "Serilog/2.4.0-dev-00767": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "System.Collections": "4.3.0",
+          "System.Collections.NonGeneric": "4.0.1",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
+      "Serilog.Sinks.ColoredConsole/2.1.0-dev-00713": {
+        "dependencies": {
+          "Serilog": "2.4.0-dev-00767",
+          "System.Console": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.ColoredConsole.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.ColoredConsole.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -2947,6 +2983,16 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg=="
+    },
+    "Serilog/2.4.0-dev-00767": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m2Q024SWZ+M1cn9YDmjCtIliOK8JgtOR+xLOKuqbsXysNbSfwqur7+Gbs/HkSaME3hmoP4OgZ5EQ6sBLNJ2Ljw=="
+    },
+    "Serilog.Sinks.ColoredConsole/2.1.0-dev-00713": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rVeOusrk9vWxUxb1C73M1y+STk4ZzbKXPDCuXOWteeGHEe/dBdm0uk9c1pddIL9Opcf+iuET5nlDyfwIPSoK1Q=="
     },
     "System.AppContext/4.3.0": {
       "type": "package",

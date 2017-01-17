@@ -3,9 +3,9 @@ using BlueBox.Delivery.Orders.Microservice.Client.DTO;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Polly;
+using System.Net.Http.Headers;
 
 namespace BlueBox.Delivery.Orders.Microservice.Client
 {
@@ -17,6 +17,15 @@ namespace BlueBox.Delivery.Orders.Microservice.Client
             Policy.Handle<Exception>()
                   .CircuitBreakerAsync(5, TimeSpan.FromMinutes(2));
 
+        private readonly IHttpClientFactory httpClientFactory;
+
+        public CustomersClient()
+        { }
+
+        public CustomersClient(IHttpClientFactory httpClientFactory)
+        {
+            this.httpClientFactory = httpClientFactory;
+        }
 
         public async Task<Customer> GetCustomer(int customerId)
         {
@@ -50,9 +59,9 @@ namespace BlueBox.Delivery.Orders.Microservice.Client
         {
             var customersResource = string.Format(getCustomerPathTemplate, customerId);
 
-            using (var httpClient = new HttpClient())
+            using (var httpClient = httpClientFactory.Create(new Uri(customersBaseUrl)))
             {
-                httpClient.BaseAddress = new Uri(customersBaseUrl);
+                //httpClient.BaseAddress = new Uri(customersBaseUrl);
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
