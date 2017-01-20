@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
-namespace BlueBox.Delivery.Login.Microservice
+namespace BlueBox.Delivery.Identity.Microservice
 {
     public class Program
     {
@@ -16,6 +16,7 @@ namespace BlueBox.Delivery.Login.Microservice
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:5003")
                 .Build();
 
             host.Run();

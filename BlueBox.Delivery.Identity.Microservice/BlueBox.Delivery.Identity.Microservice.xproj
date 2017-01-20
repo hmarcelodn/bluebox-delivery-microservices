@@ -7,8 +7,8 @@
 
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>0001fd9b-3b70-497e-8629-0308363771fd</ProjectGuid>
-    <RootNamespace>BlueBox.Delivery.Login.Microservice</RootNamespace>
+    <ProjectGuid>01e0d48c-4ddf-4778-9987-e5f86acfb610</ProjectGuid>
+    <RootNamespace>BlueBox.Delivery.Identity.Microservice</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>

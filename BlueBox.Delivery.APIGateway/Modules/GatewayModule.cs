@@ -2,6 +2,7 @@
 using BlueBox.Delivery.APIGateway.Model;
 using Nancy;
 using Nancy.ModelBinding;
+using Nancy.Security;
 using System;
 
 namespace BlueBox.Delivery.APIGateway.Modules
@@ -19,6 +20,8 @@ namespace BlueBox.Delivery.APIGateway.Modules
                     .WithHeader("Access-Control-Allow-Methods", "POST,GET")
                     .WithHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-type")
             );
+
+            this.RequiresAuthentication();
 
             Get("/customerlist", _ =>
             {

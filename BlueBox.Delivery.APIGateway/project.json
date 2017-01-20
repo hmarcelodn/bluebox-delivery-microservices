@@ -10,7 +10,8 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Nancy": "2.0.0-clinteastwood",
     "Microsoft.AspNetCore.Owin": "1.1.0",
-    "Polly": "5.0.3"
+    "Polly": "5.0.3",
+    "IdentityServer4.AccessTokenValidation": "1.0.2"
   },
 
   "tools": {
