@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "cd881205924b40fd1c65963324c300a549e8dc6b"
+    "signature": "aa0d127bbe1d962b30bd8e6a1eefdbd187741db7"
   },
   "compilationOptions": {
     "defines": [
@@ -24,7 +24,10 @@
           "Nancy": "2.0.0-clinteastwood",
           "Microsoft.AspNetCore.Owin": "1.1.0",
           "Polly": "5.0.3",
-          "IdentityServer4.AccessTokenValidation": "1.0.2"
+          "IdentityServer4.AccessTokenValidation": "1.0.2",
+          "Serilog": "2.4.0-dev-00767",
+          "Serilog.Sinks.ColoredConsole": "2.1.0-dev-00713",
+          "Microservices.Technology.Platform": "1.0.0"
         },
         "runtime": {
           "BlueBox.Delivery.APIGateway.dll": {}
@@ -1039,6 +1042,40 @@
             "rid": "ubuntu.16.10-x64",
             "assetType": "native"
           }
+        }
+      },
+      "Serilog/2.4.0-dev-00767": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "System.Collections": "4.3.0",
+          "System.Collections.NonGeneric": "4.0.1",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
+      "Serilog.Sinks.ColoredConsole/2.1.0-dev-00713": {
+        "dependencies": {
+          "Serilog": "2.4.0-dev-00767",
+          "System.Console": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.ColoredConsole.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.ColoredConsole.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -2151,6 +2188,19 @@
           "ref/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Microservices.Technology.Platform/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "IdentityServer4.AccessTokenValidation": "1.0.2",
+          "Serilog": "2.4.0-dev-00767"
+        },
+        "runtime": {
+          "Microservices.Technology.Platform.dll": {}
+        },
+        "compile": {
+          "Microservices.Technology.Platform.dll": {}
+        }
+      },
       "Libuv/1.9.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -3250,6 +3300,16 @@
       "serviceable": true,
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg=="
     },
+    "Serilog/2.4.0-dev-00767": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m2Q024SWZ+M1cn9YDmjCtIliOK8JgtOR+xLOKuqbsXysNbSfwqur7+Gbs/HkSaME3hmoP4OgZ5EQ6sBLNJ2Ljw=="
+    },
+    "Serilog.Sinks.ColoredConsole/2.1.0-dev-00713": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rVeOusrk9vWxUxb1C73M1y+STk4ZzbKXPDCuXOWteeGHEe/dBdm0uk9c1pddIL9Opcf+iuET5nlDyfwIPSoK1Q=="
+    },
     "System.AppContext/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3589,6 +3649,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-FrazwwqfIXTfq23mfv4zH+BjqkSFNaNFBtjzu3I9NRmG8EELYyrv/fJnttCIwRMFRR/YKXF1hmsMmMEnl55HGw=="
+    },
+    "Microservices.Technology.Platform/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Libuv/1.9.0": {
       "type": "package",

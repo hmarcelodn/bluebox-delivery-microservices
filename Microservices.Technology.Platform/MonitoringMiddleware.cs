@@ -4,7 +4,7 @@ using LibOwin;
 using AppFunc = System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>;
 using System;
 
-namespace BlueBox.Delivery.Orders.Microservice.Middleware
+namespace MicroservicesNET.Platform.Logging
 {
     public class MonitoringMiddleware
     {

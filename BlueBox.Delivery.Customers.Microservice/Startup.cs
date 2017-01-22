@@ -1,11 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using BlueBox.Delivery.Customers.Microservice.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Nancy.Owin;
-using BlueBox.Delivery.Customers.Microservice.Middleware;
 using Serilog;
+using System.Threading.Tasks;
 
 namespace BlueBox.Delivery.Customers.Microservice
 {
@@ -15,6 +15,8 @@ namespace BlueBox.Delivery.Customers.Microservice
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<System.Text.Encodings.Web.UrlEncoder>(_ => System.Text.Encodings.Web.UrlEncoder.Default);
+
             services.AddCors(
                 options =>
                     {
@@ -28,6 +30,18 @@ namespace BlueBox.Delivery.Customers.Microservice
         {
             // SeriLog
             var log = ConfigureLogger();
+
+            // Adding Identity Middleware
+            app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
+            {
+                Authority = "http://localhost:5003",
+                RequireHttpsMetadata = false,
+                ApiName = "api_customers",
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true,
+                EnableCaching = false,
+                AllowedScopes = { "api_customers" }
+            });
 
             // Middlewares
             app.UseOwin(buildFunc =>

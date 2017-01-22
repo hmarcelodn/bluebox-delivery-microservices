@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AppFunc = System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>;
 
-namespace BlueBox.Delivery.Orders.Microservice.Middleware
+namespace MicroservicesNET.Platform
 {
     public class ConsoleMiddleware
     {

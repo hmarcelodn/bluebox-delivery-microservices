@@ -15,7 +15,8 @@
     "BlueBox.Delivery.Orders.Domain": "1.0.0-*",
     "Polly": "5.0.3",
     "Serilog": "2.4.0-dev-00767",
-    "Serilog.Sinks.ColoredConsole": "2.1.0-dev-00713"
+    "Serilog.Sinks.ColoredConsole": "2.1.0-dev-00713",
+    "Microservices.Technology.Platform": "1.0.0-*"
   },
 
   "tools": {

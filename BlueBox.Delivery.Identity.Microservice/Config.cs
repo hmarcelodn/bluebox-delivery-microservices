@@ -1,9 +1,6 @@
 ﻿using IdentityServer4.Models;
 using IdentityServer4.Test;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BlueBox.Delivery.Identity.Microservice
 {
@@ -12,7 +9,8 @@ namespace BlueBox.Delivery.Identity.Microservice
         public static IEnumerable<ApiResource> GetApiResource() =>
             new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("api_gateway", "API Gateway"),
+                new ApiResource("api_customers", "API Customers")
             };
 
         public static IEnumerable<Client> GetClients() =>
@@ -20,14 +18,24 @@ namespace BlueBox.Delivery.Identity.Microservice
             {
                 new Client
                 {
-                    ClientId = "client",
+                    ClientId = "web.client",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = { "api1" }
-                }
+                    AllowedScopes = { "api_gateway" }
+                },
+                new Client
+                {
+                    ClientId = "api.gateway.client",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes = { "api_customers" }
+                }                                
             };
 
         public static List<TestUser> GetUsers() =>

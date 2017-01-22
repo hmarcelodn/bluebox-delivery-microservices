@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Polly;
 using System.Net.Http.Headers;
+using MicroservicesNET.Platform;
 
 namespace BlueBox.Delivery.Orders.Microservice.Client
 {
@@ -59,15 +60,12 @@ namespace BlueBox.Delivery.Orders.Microservice.Client
         {
             var customersResource = string.Format(getCustomerPathTemplate, customerId);
 
-            using (var httpClient = httpClientFactory.Create(new Uri(customersBaseUrl)))
-            {
-                //httpClient.BaseAddress = new Uri(customersBaseUrl);
-                httpClient.DefaultRequestHeaders.Accept.Clear();
-                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var httpClient = await httpClientFactory.Create(new Uri(customersBaseUrl), "");
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                return await httpClient.GetAsync(customersResource)
-                                       .ConfigureAwait(false);
-            }
+            return await httpClient.GetAsync(customersResource)
+                                   .ConfigureAwait(false);
         }
     }
 }

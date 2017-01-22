@@ -1,4 +1,5 @@
 ﻿using BlueBox.Delivery.APIGateway.Model;
+using MicroservicesNET.Platform;
 using Newtonsoft.Json;
 using Polly;
 using System;
@@ -16,6 +17,16 @@ namespace BlueBox.Delivery.APIGateway.Client
         private Policy _circuitBreakerPolicy =
                 Policy.Handle<Exception>()
                       .CircuitBreakerAsync(5, TimeSpan.FromMinutes(2));
+
+        private readonly IHttpClientFactory httpClientFactory;
+
+        public CustomerClient()
+        { }
+
+        public CustomerClient(IHttpClientFactory httpClientFactory)
+        {
+            this.httpClientFactory = httpClientFactory;
+        }
 
         public async Task<IEnumerable<CustomerModel>> GetCustomers()
         {
@@ -42,9 +53,8 @@ namespace BlueBox.Delivery.APIGateway.Client
 
         protected async Task<HttpResponseMessage> RequestCustomerServiceFromCustomerService()
         {
-            using (var httpClient = new HttpClient())
+            using (var httpClient = await httpClientFactory.Create(new Uri(customersBaseUrl), "api_customers"))
             {
-                httpClient.BaseAddress = new Uri(customersBaseUrl);
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 

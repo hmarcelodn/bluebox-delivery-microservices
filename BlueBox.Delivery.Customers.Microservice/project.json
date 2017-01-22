@@ -15,7 +15,10 @@
     "BlueBox.Delivery.Customers.Data": "1.0.0-*",
     "BlueBox.Delivery.Customers.Domain": "1.0.0-*",
     "Serilog": "2.4.0-dev-00767",
-    "Serilog.Sinks.ColoredConsole": "2.1.0-dev-00713"
+    "Serilog.Sinks.ColoredConsole": "2.1.0-dev-00713",
+    "System.Collections": "4.3.0",
+    "Microsoft.AspNetCore.Authentication.JwtBearer": "1.1.0",
+    "IdentityServer4.AccessTokenValidation": "1.0.2"
   },
 
   "tools": {

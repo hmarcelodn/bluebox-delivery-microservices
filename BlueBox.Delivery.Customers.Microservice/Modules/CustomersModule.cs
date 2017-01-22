@@ -1,5 +1,6 @@
 ﻿using Nancy;
 using BlueBox.Delivery.Customers.Domain;
+using Nancy.Security;
 
 namespace BlueBox.Delivery.Customers.Microservice.Modules
 {
@@ -15,6 +16,9 @@ namespace BlueBox.Delivery.Customers.Microservice.Modules
                     .WithHeader("Access-Control-Allow-Methods", "POST,GET")
                     .WithHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-type")
             );
+
+            // Authentication
+            this.RequiresAuthentication();
 
             Get("", parameters =>
             {

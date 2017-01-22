@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using LibOwin;
 using Serilog;
 using Serilog.Context;
 using AppFunc = System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>;
+using System.Diagnostics;
 
-
-namespace BlueBox.Delivery.Customers.Microservice.Middleware
+namespace MicroservicesNET.Platform.Logging
 {
     public class CorrelationToken
     {
@@ -28,6 +25,25 @@ namespace BlueBox.Delivery.Customers.Microservice.Middleware
 
                 using (LogContext.PushProperty("correlationToken", correlationToken))
                     await next(env);
+            };
+        }
+    }
+
+    public class PerformanceLogging
+    {
+        public static AppFunc Middleware(AppFunc next, ILogger log)
+        {
+            return async env =>
+            {
+                var stopWatch = new Stopwatch();
+
+                stopWatch.Start();
+                await next(env);
+                stopWatch.Stop();
+
+                var owinContext = new OwinContext(env);
+                log.Information("Request: {@Method} {@Path} executed in {RequestTime:000} ms",
+                    owinContext.Request.Method, owinContext.Request.Path, stopWatch.ElapsedMilliseconds);
             };
         }
     }
