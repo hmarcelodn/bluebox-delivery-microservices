@@ -28,8 +28,6 @@ namespace MicroservicesNET.Platform
                   .Authorization = 
                         new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", response.AccessToken);
 
-            Console.WriteLine(string.Format("Token: {0}", response.AccessToken));
-
             client
                 .DefaultRequestHeaders.Add("Correlation-Token", this.correlationToken);
 

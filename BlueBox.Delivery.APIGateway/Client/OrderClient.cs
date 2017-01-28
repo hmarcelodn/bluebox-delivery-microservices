@@ -1,5 +1,6 @@
 ﻿using BlueBox.Delivery.APIGateway.Client.DTO;
 using BlueBox.Delivery.APIGateway.Model;
+using MicroservicesNET.Platform;
 using Newtonsoft.Json;
 using Polly;
 using System;
@@ -21,12 +22,22 @@ namespace BlueBox.Delivery.APIGateway.Client
             Policy.Handle<Exception>()
                   .CircuitBreakerAsync(5, TimeSpan.FromMinutes(2));
 
+        private readonly IHttpClientFactory httpClientFactory;
+
+        public OrderClient()
+        { }
+
+        public OrderClient(IHttpClientFactory httpClientFactory)
+        {
+            this.httpClientFactory = httpClientFactory;
+        }
+
         // TODO: Add Circuit Breaker Policy
         public async Task<Guid> CreateOrderFromOrdersService(int customerId)
         {
-            using (var httpClient = new HttpClient())
+            using (var httpClient = await this.httpClientFactory.Create(new Uri(ordersBaseUrl), "api_orders"))
             {
-                httpClient.BaseAddress = new Uri(ordersBaseUrl);
+                //httpClient.BaseAddress = new Uri(ordersBaseUrl);
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -51,9 +62,9 @@ namespace BlueBox.Delivery.APIGateway.Client
         // TODO: Add Circuit Breaker Policy
         public async Task UpdateOrderWithPackageFromOrdersService(Guid orderId, NewOrderModel orderModel)
         {
-            using (var httpClient = new HttpClient())
+            using (var httpClient = await this.httpClientFactory.Create(new Uri(ordersBaseUrl), "api_orders"))
             {
-                httpClient.BaseAddress = new Uri(ordersBaseUrl);
+                //httpClient.BaseAddress = new Uri(ordersBaseUrl);
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -80,9 +91,9 @@ namespace BlueBox.Delivery.APIGateway.Client
         {
             var customerOrdersResource = string.Format(customerOrdersPathTemplate, customerId);
 
-            using (var httpClient = new HttpClient())
+            using (var httpClient =  await httpClientFactory.Create(new Uri(ordersBaseUrl), "api_orders"))
             {
-                httpClient.BaseAddress = new Uri(customerOrdersPathTemplate);
+                //httpClient.BaseAddress = new Uri(customerOrdersPathTemplate);
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 

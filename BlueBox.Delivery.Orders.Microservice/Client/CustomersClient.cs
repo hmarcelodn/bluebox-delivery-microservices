@@ -60,7 +60,7 @@ namespace BlueBox.Delivery.Orders.Microservice.Client
         {
             var customersResource = string.Format(getCustomerPathTemplate, customerId);
 
-            var httpClient = await httpClientFactory.Create(new Uri(customersBaseUrl), "");
+            var httpClient = await httpClientFactory.Create(new Uri(customersBaseUrl), "api_customers");
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 

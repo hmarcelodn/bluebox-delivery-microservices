@@ -30,6 +30,7 @@ namespace BlueBox.Delivery.APIGateway.Microservice
             var correlationToken = context.GetOwinEnvironment()["correlationToken"] as string;       
 
             container.Register<ICustomerClient>(new CustomerClient(new HttpClientFactory(correlationToken)));
+            container.Register<IOrderClient>(new OrderClient(new HttpClientFactory(correlationToken)));
         }
 
         protected override void ConfigureApplicationContainer(TinyIoCContainer container)

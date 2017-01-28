@@ -10,7 +10,8 @@ namespace BlueBox.Delivery.Identity.Microservice
             new List<ApiResource>
             {
                 new ApiResource("api_gateway", "API Gateway"),
-                new ApiResource("api_customers", "API Customers")
+                new ApiResource("api_customers", "API Customers"),
+                new ApiResource("api_orders", "API Orders")
             };
 
         public static IEnumerable<Client> GetClients() =>
@@ -34,8 +35,8 @@ namespace BlueBox.Delivery.Identity.Microservice
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = { "api_customers" }
-                }                                
+                    AllowedScopes = { "api_customers", "api_orders" }
+                }
             };
 
         public static List<TestUser> GetUsers() =>
