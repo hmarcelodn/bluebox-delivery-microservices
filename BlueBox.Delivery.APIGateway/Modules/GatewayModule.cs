@@ -35,11 +35,11 @@ namespace BlueBox.Delivery.APIGateway.Modules
                 return Response.AsJson(allOrders);
             });
 
-            Get("/orders/{customerId:int}", parameters =>
+            Get("/orders/{customerId:int}", async (parameters, _) =>
             {
                 var customerId = (int)parameters.customerid;
 
-                var allOrders = orderClient.GetAllCustomerOrdersFromOrdersService(customerId);
+                var allOrders = await orderClient.GetAllCustomerOrdersFromOrdersService(customerId);
 
                 return Response.AsJson(allOrders);
             });

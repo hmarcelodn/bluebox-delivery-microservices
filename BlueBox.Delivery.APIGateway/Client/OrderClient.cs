@@ -37,7 +37,6 @@ namespace BlueBox.Delivery.APIGateway.Client
         {
             using (var httpClient = await this.httpClientFactory.Create(new Uri(ordersBaseUrl), "api_orders"))
             {
-                //httpClient.BaseAddress = new Uri(ordersBaseUrl);
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -64,7 +63,6 @@ namespace BlueBox.Delivery.APIGateway.Client
         {
             using (var httpClient = await this.httpClientFactory.Create(new Uri(ordersBaseUrl), "api_orders"))
             {
-                //httpClient.BaseAddress = new Uri(ordersBaseUrl);
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -87,20 +85,19 @@ namespace BlueBox.Delivery.APIGateway.Client
         }
 
         // TODO: Add Circuit Breaker Policy
-        public async Task<IEnumerable<object>> GetAllCustomerOrdersFromOrdersService(int customerId)
+        public async Task<IEnumerable<OrderDTO>> GetAllCustomerOrdersFromOrdersService(int customerId)
         {
             var customerOrdersResource = string.Format(customerOrdersPathTemplate, customerId);
 
             using (var httpClient =  await httpClientFactory.Create(new Uri(ordersBaseUrl), "api_orders"))
             {
-                //httpClient.BaseAddress = new Uri(customerOrdersPathTemplate);
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var content = new StringContent(JsonConvert.SerializeObject(new { customerId = customerId }));
                 var httpResponse = await httpClient.GetAsync(customerOrdersResource).ConfigureAwait(false);
                 httpResponse.EnsureSuccessStatusCode();
-                var orderData = JsonConvert.DeserializeObject<IEnumerable<object>>(
+                var orderData = JsonConvert.DeserializeObject<IEnumerable<OrderDTO>>(
                         await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false)
                     );
 

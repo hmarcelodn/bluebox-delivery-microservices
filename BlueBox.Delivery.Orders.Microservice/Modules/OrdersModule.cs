@@ -4,7 +4,6 @@ using BlueBox.Delivery.Orders.Microservice.Client;
 using BlueBox.Delivery.Orders.Microservice.Model;
 using Nancy;
 using Nancy.ModelBinding;
-using Nancy.TinyIoc;
 
 namespace BlueBox.Delivery.Orders.Microservice.Modules
 {
